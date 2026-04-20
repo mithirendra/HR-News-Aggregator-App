@@ -2,3 +2,4 @@ feedparser
 flask
 apscheduler
 python-dotenv
+gunicorn
