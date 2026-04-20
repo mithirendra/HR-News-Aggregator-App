@@ -113,6 +113,12 @@ body {
     border-bottom: 2px solid #f49052;
 }
 
+.tabs a.active {
+    color: #f49052;
+    border-bottom: 2px solid #f49052;
+    font-weight: bold;
+}
+
 /* Article card */
 .card {
     background: white;

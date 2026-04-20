@@ -48,12 +48,12 @@ def get_articles(category=None):
 @app.route("/")
 def index():
     articles = get_articles()
-    return render_template("index.html", articles=articles)
+    return render_template("index.html", articles=articles, current_category="All")
 
 @app.route("/category/<category>")
 def by_category(category):
     articles = get_articles(category)
-    return render_template("index.html", articles=articles)
+    return render_template("index.html", articles=articles, current_category=category)
 
 def refresh_feeds():
     subprocess.run(["python", "news_aggregator.py"])

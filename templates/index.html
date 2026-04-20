@@ -26,11 +26,11 @@
     </div>
 
     <div class="tabs">
-        <a href="/">All</a>
-        <a href="/category/HR News">HR News</a>
-        <a href="/category/HR Tech & AI News">HR Tech & AI</a>
-        <a href="/category/Data Science & AI News">Data Science & AI</a>
-        <a href="/category/Future AI">Future AI</a>
+        <a href="/" class="{% if current_category == 'All' %}active{% endif %}">All</a>
+        <a href="/category/HR News" class="{% if current_category == 'HR News' %}active{% endif %}">HR News</a>
+        <a href="/category/HR Tech & AI News" class="{% if current_category == 'HR Tech & AI News' %}active{% endif %}">HR Tech & AI</a>
+        <a href="/category/Data Science & AI News" class="{% if current_category == 'Data Science & AI News' %}active{% endif %}">Data Science & AI</a>
+        <a href="/category/Future AI News" class="{% if current_category == 'Future AI News' %}active{% endif %}">Future AI</a>
     </div>
 
     {% for article in articles %}

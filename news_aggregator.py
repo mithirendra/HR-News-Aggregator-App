@@ -28,11 +28,11 @@ FEEDS = {
         "https://www.analyticsvidhya.com/feed",
         "https://aimalaysia.org/feed/"
     ],
-    "Future AI": [
-    "https://news.mit.edu/rss/topic/artificial-intelligence2",
-    "https://techcrunch.com/category/artificial-intelligence/feed/",
-    "https://www.artificialintelligence-news.com/feed/rss/",
-    "https://research.google/blog/rss"
+    "Future AI News": [
+        "https://news.mit.edu/rss/topic/artificial-intelligence2",
+        "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "https://www.artificialintelligence-news.com/feed/rss/",
+        "https://research.google/blog/rss"
 ]
 }
 
