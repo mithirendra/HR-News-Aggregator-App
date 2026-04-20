@@ -4,6 +4,7 @@ from apscheduler.schedulers.background import BackgroundScheduler
 import subprocess
 from dotenv import load_dotenv
 import os
+from news_aggregator import create_database
 
 app = Flask(__name__)
 
@@ -72,5 +73,10 @@ scheduler.start()
 # def contact():
 #     return render_template("contact.html")
 
+# Run on startup
+create_database()
+refresh_feeds()
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port, debug=False)
