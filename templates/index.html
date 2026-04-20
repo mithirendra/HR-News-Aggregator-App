@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HR News Hub</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="header">
+        <div>
+            <h1>HR News <span>Hub</span></h1>
+            <div class="subtitle">Your daily HR, tech and data science news</div>
+        </div>
+        <a href="/refresh" class="refresh-btn">↻ Refresh Articles</a>
+    </div>
+
+    {% for message in get_flashed_messages() %}
+        <div class="flash">{{ message }}</div>
+    {% endfor %}
+
+    <div class="stats-bar">
+        <div class="stat">
+            <div class="stat-num">{{ articles | length }}</div>
+            <div class="stat-label">Total articles</div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <a href="/">All</a>
+        <a href="/category/HR News">HR News</a>
+        <a href="/category/HR Tech & AI News">HR Tech & AI</a>
+        <a href="/category/Data Science & AI News">Data Science & AI</a>
+    </div>
+
+    {% for article in articles %}
+    <div class="card">
+        <div class="card-top">
+            {% if article.category == "HR News" %}
+                <span class="badge badge-hr">{{ article.source }}</span>
+            {% elif article.category == "HR Tech & AI News" %}
+                <span class="badge badge-tech">{{ article.source }}</span>
+            {% else %}
+                <span class="badge badge-ds">{{ article.source }}</span>
+            {% endif %}
+            <span class="time">{{ article.published }}</span>
+        </div>
+        <h3><a href="{{ article.link }}" target="_blank">{{ article.title }}</a></h3>
+        <p class="summary">{{ article.summary | striptags }}</p>
+        <a class="read-more" href="{{ article.link }}" target="_blank">Read full article →</a>
+    </div>
+    {% endfor %}
+
+    <div style="text-align: right; padding: 30px 0;">
+        <a href="/clear" class="refresh-btn">🗑 Clear & Refresh Database</a>
+    </div>
+
+    <footer>
+        <hr>
+        <p>&copy; 2026 Version 0 Built by Mithirendra Maniam</p>
+    </footer>
+
+</body>
+</html>

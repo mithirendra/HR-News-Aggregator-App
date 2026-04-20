@@ -1,0 +1,5 @@
+news_agg_env/
+news.db
+__pycache__/
+*.pyc
+.env
