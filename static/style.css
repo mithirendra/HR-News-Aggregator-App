@@ -147,6 +147,11 @@ body {
     color: #534ab7;
 }
 
+.badge-future {
+    background: #eab8ba;
+    color: red;
+}
+
 .badge-ds {
     background: #eaf3de;
     color: #3b6d11;

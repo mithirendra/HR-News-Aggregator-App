@@ -30,6 +30,7 @@
         <a href="/category/HR News">HR News</a>
         <a href="/category/HR Tech & AI News">HR Tech & AI</a>
         <a href="/category/Data Science & AI News">Data Science & AI</a>
+        <a href="/category/Future AI">Future AI</a>
     </div>
 
     {% for article in articles %}
@@ -39,6 +40,8 @@
                 <span class="badge badge-hr">{{ article.source }}</span>
             {% elif article.category == "HR Tech & AI News" %}
                 <span class="badge badge-tech">{{ article.source }}</span>
+            {% elif article.category == "Future AI" %}
+                <span class="badge badge-future">{{ article.source }}</span>
             {% else %}
                 <span class="badge badge-ds">{{ article.source }}</span>
             {% endif %}

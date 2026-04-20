@@ -5,6 +5,7 @@ import subprocess
 from dotenv import load_dotenv
 import os
 from news_aggregator import create_database
+from email.utils import parsedate_to_datetime
 
 app = Flask(__name__)
 
@@ -15,9 +16,9 @@ def get_articles(category=None):
     conn = sqlite3.connect("news.db")
     cursor = conn.cursor()
     if category:
-        cursor.execute("SELECT category, source, title, link, summary, published FROM articles WHERE category = ?", (category,))
+        cursor.execute("SELECT category, source, title, link, summary, published FROM articles WHERE category = ? ORDER BY published DESC", (category,))
     else:
-        cursor.execute("SELECT category, source, title, link, summary, published FROM articles")
+        cursor.execute("SELECT category, source, title, link, summary, published FROM articles ORDER BY published DESC")
     rows = cursor.fetchall()
     conn.close()
 
@@ -32,6 +33,15 @@ def get_articles(category=None):
             "summary": row[4],
             "published": row[5]
         })
+
+    def sort_key(a):
+        try:
+            return parsedate_to_datetime(a["published"])
+        except:
+            return datetime.min
+
+    from datetime import datetime
+    articles.sort(key=sort_key, reverse=True)
 
     return articles
 
