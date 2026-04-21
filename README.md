@@ -1,5 +1,5 @@
 # HR News Hub
-A Python/Flask news aggregator that pulls the latest HR, HR Tech & AI, and Data Science & AI news from multiple RSS feeds and displays them in a clean, categorized web interface.
+A Python/Flask news aggregator that pulls the latest HR, HR Tech & AI, and Data Science & AI news from multiple RSS feeds and displays them in a clean, categorized web interface. This is part of the HR Digital Transformation Toolkit.
 
 ## Features
 - Aggregates news from 13+ RSS sources across 3 categories
