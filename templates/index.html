@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>HR News Hub</title>
+    <title>HR News Hub | Mitma Consulting</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='mitma_favicon.png') }}">
 </head>
 <body>
 
     <div class="header">
         <div>
-            <h1>HR News <span>Hub</span></h1>
+            <h1>HR NEWS <span>HUB</span></h1>
+            <div class="subtitle">BY MITMA CONSULTING</div>
             <div class="subtitle">Your daily HR, tech and data science news</div>
         </div>
-        <a href="/refresh" class="refresh-btn">↻ Refresh Articles</a>
+        <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 10px;">
+            <a href="https://mitmaconsulting.framer.ai/" target="_blank">
+                <img src="{{ url_for('static', filename='mitma_logo.png') }}" height="40" alt="Mitma Consulting">
+            </a>
+            <a href="/refresh" class="refresh-btn">↻ Refresh Articles</a>
+        </div>
     </div>
 
     {% for message in get_flashed_messages() %}
@@ -57,9 +65,21 @@
         <a href="/clear" class="refresh-btn">🗑 Clear & Refresh Database</a>
     </div>
 
+    <div class="promo-banner">
+        <p>Looking for a custom HR intelligence tool for your organisation?</p>
+        <a href="https://mitmaconsulting.framer.ai/" target="_blank">
+            <img src="{{ url_for('static', filename='mitma_logo.png') }}" height="40" alt="Mitma Consulting">
+        </a>
+        <div style="display: flex; gap: 10px; justify-content: center; margin-top: 10px;">
+            <a href="https://mitmaconsulting.framer.ai/contact" target="_blank" class="promo-btn">Contact Mitma Consulting</a>
+            <a href="https://www.linkedin.com/in/mithirendra-maniam/" target="_blank" class="promo-btn promo-btn-linkedin">Connect on LinkedIn</a>
+        </div>
+    </div>
+
     <footer>
         <hr>
-        <p>&copy; 2026 Version 0 Built by Mithirendra Maniam</p>
+        <p>&copy; 2026 Mitma Consulting · HR News Aggregator Hub Version 0 ·
+    Built by Mithirendra Maniam</p>
     </footer>
 
 </body>

@@ -2,10 +2,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     background-color: #fffbf8;
     color: #333;
     max-width: 960px;
@@ -200,6 +201,43 @@ body {
 
 .read-more:hover {
     text-decoration: underline;
+}
+
+.promo-banner {
+    background: #ffece1;
+    border: 1px solid #dde3f0;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    margin: 30px 0 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+.promo-banner p {
+    margin-bottom: 12px;
+}
+
+.promo-btn {
+    text-decoration: none;
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    background: #f49052;
+    color: white;
+}
+
+.promo-btn:hover {
+    background: #505050;
+}
+
+.promo-btn-linkedin {
+    background: #f49052;
+}
+
+.promo-btn-linkedin:hover {
+    background: #505050;
 }
 
 /* Footer */
